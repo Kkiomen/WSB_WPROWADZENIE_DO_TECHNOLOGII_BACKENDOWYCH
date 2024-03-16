@@ -31,7 +31,6 @@ public class VisitEntity {
 	@OneToMany(mappedBy = "visit", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Set<MedicalTreatmentEntity> medicalTreatments = new HashSet<>();
 
-
 	public Long getId() {
 		return id;
 	}

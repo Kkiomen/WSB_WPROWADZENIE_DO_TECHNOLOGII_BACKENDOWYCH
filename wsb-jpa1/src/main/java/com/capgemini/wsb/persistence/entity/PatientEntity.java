@@ -1,6 +1,7 @@
 package com.capgemini.wsb.persistence.entity;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -33,6 +34,12 @@ public class PatientEntity {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "address_id", referencedColumnName = "id")
 	private AddressEntity address;
+
+	@OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<VisitEntity> visits;
+
+	@Column(nullable = false)
+	private boolean active;
 
 	public Long getId() {
 		return id;
@@ -90,11 +97,27 @@ public class PatientEntity {
 		this.dateOfBirth = dateOfBirth;
 	}
 
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+
 	public AddressEntity getAddress() {
 		return address;
 	}
 
 	public void setAddress(AddressEntity address) {
 		this.address = address;
+	}
+
+	public List<VisitEntity> getVisits() {
+		return visits;
+	}
+
+	public void setVisits(List<VisitEntity> visits) {
+		this.visits = visits;
 	}
 }

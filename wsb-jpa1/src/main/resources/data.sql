@@ -13,26 +13,26 @@ insert into address (id, address_line1, address_line2, city, postal_code) values
 (12, 'Walidacyjna 12', 'm 964', 'Tomaszów Mazowiecki', '87-573'),
 (13, 'Obiektowa 10', 'Budynek B', 'Gdańsk', '27-743');
 
-INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, address_id) VALUES
-(1, 'Agnieszka', 'Kowalski', '+48 180-984-707', 'agnieszka.kowalski@email.pl', 'PN2914', '1959-04-30', 1),
-(2, 'Anna', 'Kowalski', '+48 878-695-470', 'anna.kowalski@example.com', 'PN7402', '1981-01-17', 2),
-(3, 'Tomasz', 'Nowak', '+48 794-153-581', 'tomasz.nowak@mail.com', 'PN5867', '1946-06-18', 3),
-(4, 'Piotr', 'Nowak', '+48 520-127-677', 'piotr.nowak@email.pl', 'PN3006', '1945-12-09', 4),
-(5, 'Agnieszka', 'Dąbrowski', '+48 669-967-660', 'agnieszka.dąbrowski@example.com', 'PN7404', '1970-01-08', 5),
-(6, 'Agnieszka', 'Lewandowski', '+48 407-251-240', 'agnieszka.lewandowski@example.com', 'PN9762', '1957-08-31', 6),
-(7, 'Katarzyna', 'Wójcik', '+48 660-264-528', 'katarzyna.wójcik@mail.com', 'PN8299', '1988-10-18', 7),
-(8, 'Anna', 'Wójcik', '+48 503-227-335', 'anna.wójcik@example.com', 'PN7998', '1953-02-21', 8),
-(9, 'Andrzej', 'Zieliński', '+48 675-181-217', 'andrzej.zieliński@email.pl', 'PN1952', '1990-01-01', 9),
-(10, 'Krzysztof', 'Kamiński', '+48 848-681-774', 'krzysztof.kamiński@example.com', 'PN5737', '1995-01-20', 10),
-(11, 'Katarzyna', 'Kamiński', '+48 800-246-939', 'katarzyna.kamiński@email.pl', 'PN3241', '1966-04-08', 1),
-(12, 'Katarzyna', 'Lewandowski', '+48 389-678-827', 'katarzyna.lewandowski@test.pl', 'PN5107', '1926-12-01', 2),
-(13, 'Katarzyna', 'Wiśniewski', '+48 499-821-822', 'katarzyna.wiśniewski@mail.com', 'PN9970', '1964-03-05', 3),
-(14, 'Jan', 'Wiśniewski', '+48 428-581-500', 'jan.wiśniewski@email.pl', 'PN9128', '1957-01-20', 11),
-(15, 'Katarzyna', 'Szymański', '+48 856-582-863', 'katarzyna.szymański@email.pl', 'PN3190', '1953-05-01', 12),
-(16, 'Barbara', 'Szymański', '+48 666-726-418', 'barbara.szymański@test.pl', 'PN2090', '1942-10-23', 13),
-(17, 'Anna', 'Wiśniewski', '+48 907-680-192', 'anna.wiśniewski@mail.com', 'PN2896', '1950-05-24', 2),
-(18, 'Jan', 'Zieliński', '+48 373-698-763', 'jan.zieliński@email.pl', 'PN3598', '1994-10-01', 3),
-(19, 'Piotr', 'Wójcik', '+48 885-577-956', 'piotr.wójcik@example.com', 'PN7350', '1965-12-06', 7);
+INSERT INTO patient (id, first_name, last_name, telephone_number, email, patient_number, date_of_birth, address_id, active) VALUES
+(1, 'Agnieszka', 'Kowalski', '+48 180-984-707', 'agnieszka.kowalski@email.pl', 'PN2914', '1959-04-30', 1, 1),
+(2, 'Anna', 'Kowalski', '+48 878-695-470', 'anna.kowalski@example.com', 'PN7402', '1981-01-17', 2, 0),
+(3, 'Tomasz', 'Nowak', '+48 794-153-581', 'tomasz.nowak@mail.com', 'PN5867', '1946-06-18', 3, 1),
+(4, 'Piotr', 'Nowak', '+48 520-127-677', 'piotr.nowak@email.pl', 'PN3006', '1945-12-09', 4, 1),
+(5, 'Agnieszka', 'Dąbrowski', '+48 669-967-660', 'agnieszka.dąbrowski@example.com', 'PN7404', '1970-01-08', 5, 1),
+(6, 'Agnieszka', 'Lewandowski', '+48 407-251-240', 'agnieszka.lewandowski@example.com', 'PN9762', '1957-08-31', 6, 0),
+(7, 'Katarzyna', 'Wójcik', '+48 660-264-528', 'katarzyna.wójcik@mail.com', 'PN8299', '1988-10-18', 7, 1),
+(8, 'Anna', 'Wójcik', '+48 503-227-335', 'anna.wójcik@example.com', 'PN7998', '1953-02-21', 8, 1),
+(9, 'Andrzej', 'Zieliński', '+48 675-181-217', 'andrzej.zieliński@email.pl', 'PN1952', '1990-01-01', 9, 0),
+(10, 'Krzysztof', 'Kamiński', '+48 848-681-774', 'krzysztof.kamiński@example.com', 'PN5737', '1995-01-20', 10, 1),
+(11, 'Katarzyna', 'Kamiński', '+48 800-246-939', 'katarzyna.kamiński@email.pl', 'PN3241', '1966-04-08', 1, 1),
+(12, 'Katarzyna', 'Lewandowski', '+48 389-678-827', 'katarzyna.lewandowski@test.pl', 'PN5107', '1926-12-01', 2, 1),
+(13, 'Katarzyna', 'Wiśniewski', '+48 499-821-822', 'katarzyna.wiśniewski@mail.com', 'PN9970', '1964-03-05', 3, 1),
+(14, 'Jan', 'Wiśniewski', '+48 428-581-500', 'jan.wiśniewski@email.pl', 'PN9128', '1957-01-20', 11, 0),
+(15, 'Katarzyna', 'Szymański', '+48 856-582-863', 'katarzyna.szymański@email.pl', 'PN3190', '1953-05-01', 12, 1),
+(16, 'Barbara', 'Szymański', '+48 666-726-418', 'barbara.szymański@test.pl', 'PN2090', '1942-10-23', 13, 1),
+(17, 'Anna', 'Wiśniewski', '+48 907-680-192', 'anna.wiśniewski@mail.com', 'PN2896', '1950-05-24', 2, 1),
+(18, 'Jan', 'Zieliński', '+48 373-698-763', 'jan.zieliński@email.pl', 'PN3598', '1994-10-01', 3, 0),
+(19, 'Piotr', 'Wójcik', '+48 885-577-956', 'piotr.wójcik@example.com', 'PN7350', '1965-12-06', 7, 1);
 
 INSERT INTO doctor (id, first_name, last_name, telephone_number, email, doctor_number, specialization, address_id) VALUES
 (1, 'Małgorzata', 'Lewandowski', '+48 361-840-331', 'małgorzata.lewandowski@example.com', 'DN5182', 'GENERAL_PRACTITIONER', 1),
