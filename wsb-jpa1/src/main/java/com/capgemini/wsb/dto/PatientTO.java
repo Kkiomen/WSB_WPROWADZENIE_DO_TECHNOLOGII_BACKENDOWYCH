@@ -16,7 +16,7 @@ public class PatientTO {
     private LocalDate dateOfBirth;
     private AddressEntity address;
     private boolean active;
-    private List<VisitEntity> visits;
+    private List<VisitTO> visits;
 
     public Long getId() {
         return id;
@@ -90,11 +90,11 @@ public class PatientTO {
         this.active = active;
     }
 
-    public List<VisitEntity> getVisits() {
+    public List<VisitTO> getVisits() {
         return visits;
     }
 
-    public void setVisits(List<VisitEntity> visits) {
+    public void setVisits(List<VisitTO> visits) {
         this.visits = visits;
     }
 }

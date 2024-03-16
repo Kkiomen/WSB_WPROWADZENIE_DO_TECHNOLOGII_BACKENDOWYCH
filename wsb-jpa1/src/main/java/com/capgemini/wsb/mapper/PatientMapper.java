@@ -1,10 +1,14 @@
 package com.capgemini.wsb.mapper;
 
 import com.capgemini.wsb.dto.PatientTO;
+import com.capgemini.wsb.dto.VisitTO;
 import com.capgemini.wsb.persistence.entity.PatientEntity;
+import com.capgemini.wsb.persistence.entity.VisitEntity;
 
-public final class PatientMapper
-{
+import java.util.ArrayList;
+import java.util.List;
+
+public final class PatientMapper {
 
     public static PatientTO mapToTO(final PatientEntity patientEntity) {
         if (patientEntity == null) {
@@ -19,7 +23,17 @@ public final class PatientMapper
         patientTO.setPatientNumber(patientEntity.getPatientNumber());
         patientTO.setAddress(patientEntity.getAddress());
         patientTO.setActive(patientEntity.isActive());
-        patientTO.setVisits(patientEntity.getVisits());
+
+        if (patientEntity.getVisits() != null) {
+            List<VisitTO> visitsTO = new ArrayList<>();
+            for (VisitEntity visitEntity : patientEntity.getVisits()) {
+                visitsTO.add(VisitMapper.mapToTO(visitEntity));
+            }
+            patientTO.setVisits(visitsTO);
+        }else{
+            patientTO.setVisits(new ArrayList<>());
+        }
+
         return patientTO;
     }
 
@@ -36,7 +50,19 @@ public final class PatientMapper
         patientEntity.setPatientNumber(patientTO.getPatientNumber());
         patientEntity.setAddress(patientTO.getAddress());
         patientEntity.setActive(patientTO.isActive());
-        patientEntity.setVisits(patientTO.getVisits());
+
+        if (patientTO.getVisits() != null) {
+            List<VisitEntity> visitsEntities = new ArrayList<>();
+            for (VisitTO visitEntity : patientTO.getVisits()) {
+                visitsEntities.add(VisitMapper.mapToEntity(visitEntity));
+            }
+            patientEntity.setVisits(visitsEntities);
+        }else{
+            patientEntity.setVisits(new ArrayList<>());
+        }
+
+
+
         return patientEntity;
     }
 }

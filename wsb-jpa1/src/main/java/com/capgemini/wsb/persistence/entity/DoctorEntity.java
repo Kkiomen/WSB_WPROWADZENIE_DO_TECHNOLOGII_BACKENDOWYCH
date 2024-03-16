@@ -7,7 +7,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "DOCTOR")
 public class DoctorEntity {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

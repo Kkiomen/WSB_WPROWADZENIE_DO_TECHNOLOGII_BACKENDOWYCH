@@ -20,11 +20,11 @@ public class VisitEntity {
 	@Column(nullable = false)
 	private LocalDateTime time;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name = "doctor_id", referencedColumnName = "id")
 	private DoctorEntity doctor;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
 	@JoinColumn(name = "patient_id", referencedColumnName = "id")
 	private PatientEntity patient;
 
